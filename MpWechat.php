@@ -807,7 +807,7 @@ class MpWechat extends BaseWechat
             'access_token' => $this->getAccessToken(),
             'next_openid' => $nextOpenId,
         ]);
-        return array_key_exists('errcode', $result) ? $result : false;
+        return !array_key_exists('errcode', $result) ? $result : false;
     }
 
     /* ==== 网页授权 ===== */
